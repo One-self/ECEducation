@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+    
+        <action name = "login" class = "cn.edu.ccut.action.Login" method = "verify">
+            <result name="success">/me.jsp</result>
+            <result name="fail">/login.jsp</result>  
+        </action>
+        
+        <action name = "register" class = "cn.edu.ccut.action.Register" method = "register">
+        	<result name="error">/register.jsp</result>
+        	<result name="success">/login.jsp</result>
+        	
+        </action>
+        
+        <action name = "change"  class = "cn.edu.ccut.action.Change" method = "change"> 
+        	<result name="success">/me.jsp</result>
+        </action>
+        
+        <action name = "logoff" class = "cn.edu.ccut.action.Logoff" method = "clearUserInfo">
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name = "publish" class = "cn.edu.ccut.action.Publish" method = "pub">
+        	<result name="success">/share.jsp</result>
+        	<result name="offline">/login.jsp</result>
+        </action>
+        
+        <action name = "toShare" class = "cn.edu.ccut.action.ToShare" method = "toSha">
+			<result name="success">/share.jsp</result>
+		</action>
+		
+		<action name = "toAboutMe" class = "cn.edu.ccut.action.ToAboutMe" method = "toAbo">
+			<result name="success">/aboutme.jsp</result>
+			<result name="offline">/login.jsp</result>
+		</action>
+		
+		<action name = "toMyAttitude" class = "cn.edu.ccut.action.ToMyAttitude" method = "toMyAtt">
+			<result name="success">/click.jsp</result>
+			<result name="offline">/login.jsp</result>
+		</action>
+        <action name = "changeIcon" class = "cn.edu.ccut.action.ChangeIcon" method = "chanIcon">
+			<result name="success">/mechange.jsp</result>
+		</action>
+        
+    </package>
+</struts>
